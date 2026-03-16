@@ -21,9 +21,7 @@ uv run python -m agents_at_work_demo.main --scenario saas_ops --product "OrbitFl
 
 - Python 3.10 to 3.13
 - Ollama running locally
-- Ollama models:
-  - `qwen3-vl:8b`
-  - `nomic-embed-text:latest`
+- Ollama model `qwen3-vl:8b`
 
 ## Scenarios
 
@@ -75,6 +73,8 @@ PowerShell:
 $env:PYTHONPATH="src"
 crewai run
 ```
+
+The local knowledge search now reads directly from the scenario file, so this demo no longer depends on the Chroma-based `TXTSearchTool` path.
 
 ## Output
 

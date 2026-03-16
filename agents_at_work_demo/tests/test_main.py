@@ -49,44 +49,37 @@ class ScenarioResolutionTests(unittest.TestCase):
 
 
 class PreflightTests(unittest.TestCase):
-    @patch("agents_at_work_demo.main.KNOWLEDGE_BASE_PATH.exists", return_value=True)
     @patch("agents_at_work_demo.main.requests.get")
-    def test_preflight_passes_when_required_models_exist(
-        self,
-        mock_get: Mock,
-        _mock_exists: Mock,
-    ) -> None:
-        response = Mock()
-        response.json.return_value = {
-            "models": [
-                {"name": main.OLLAMA_LLM_MODEL},
-                {"name": main.OLLAMA_EMBED_MODEL},
-            ]
-        }
-        response.raise_for_status.return_value = None
-        mock_get.return_value = response
+    def test_preflight_passes_when_required_models_exist(self, mock_get: Mock) -> None:
+        fake_path = Mock()
+        fake_path.exists.return_value = True
 
-        main.run_preflight_checks()
-
-    @patch("agents_at_work_demo.main.KNOWLEDGE_BASE_PATH.exists", return_value=True)
-    @patch("agents_at_work_demo.main.requests.get")
-    def test_preflight_fails_when_model_is_missing(
-        self,
-        mock_get: Mock,
-        _mock_exists: Mock,
-    ) -> None:
         response = Mock()
         response.json.return_value = {"models": [{"name": main.OLLAMA_LLM_MODEL}]}
         response.raise_for_status.return_value = None
         mock_get.return_value = response
 
-        with self.assertRaisesRegex(RuntimeError, main.OLLAMA_EMBED_MODEL):
-            main.run_preflight_checks()
+        main.run_preflight_checks_for_path(fake_path)
 
-    @patch("agents_at_work_demo.main.KNOWLEDGE_BASE_PATH.exists", return_value=False)
-    def test_preflight_fails_when_knowledge_file_is_missing(self, _mock_exists: Mock) -> None:
+    @patch("agents_at_work_demo.main.requests.get")
+    def test_preflight_fails_when_model_is_missing(self, mock_get: Mock) -> None:
+        fake_path = Mock()
+        fake_path.exists.return_value = True
+
+        response = Mock()
+        response.json.return_value = {"models": []}
+        response.raise_for_status.return_value = None
+        mock_get.return_value = response
+
+        with self.assertRaisesRegex(RuntimeError, main.OLLAMA_LLM_MODEL):
+            main.run_preflight_checks_for_path(fake_path)
+
+    def test_preflight_fails_when_knowledge_file_is_missing(self) -> None:
+        fake_path = Mock()
+        fake_path.exists.return_value = False
+
         with self.assertRaisesRegex(RuntimeError, "Knowledge file is missing"):
-            main.run_preflight_checks()
+            main.run_preflight_checks_for_path(fake_path)
 
 
 if __name__ == "__main__":

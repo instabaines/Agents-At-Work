@@ -23,8 +23,9 @@ from typing import Any
 
 from crewai import Agent, Crew, LLM, Process, Task
 from crewai.tasks.task_output import TaskOutput
-from crewai_tools import TXTSearchTool
 import requests
+
+from agents_at_work_demo.tools.custom_tool import LocalKnowledgeSearchTool
 
 try:
     from crewai_tools import SerperDevTool
@@ -40,7 +41,6 @@ OUTPUT_MEMO_PATH = ROOT_DIR / "strategic_research_swarm_memo.md"
 CREW_LOG_PATH = ROOT_DIR / "crew_run.log"
 OLLAMA_BASE_URL = "http://localhost:11434"
 OLLAMA_LLM_MODEL = "qwen3-vl:8b"
-OLLAMA_EMBED_MODEL = "nomic-embed-text:latest"
 
 DEFAULT_PRODUCT = "OrbitFlow"
 DEFAULT_MARKET = "mid-market SaaS operations teams"
@@ -91,23 +91,9 @@ def build_llm() -> LLM:
     )
 
 
-def build_txt_search_tool(knowledge_path: Path) -> TXTSearchTool:
+def build_txt_search_tool(knowledge_path: Path) -> LocalKnowledgeSearchTool:
     """Create the local knowledge-base search tool."""
-    tool_config = {
-        "embedding_model": {
-                "provider": "ollama",
-                "config": {
-                "model_name": OLLAMA_EMBED_MODEL,
-                "base_url": f"{OLLAMA_BASE_URL}/api/embed",
-                "api_key": "ollama",
-            },
-        },
-    }
-    return TXTSearchTool(
-        txt=str(knowledge_path),
-        max_tokens=800,
-        config=tool_config,
-    )
+    return LocalKnowledgeSearchTool(knowledge_path=str(knowledge_path))
 
 
 def maybe_build_web_search_tool(mode: str) -> tuple[Any | None, str]:
@@ -163,7 +149,7 @@ def run_preflight_checks_for_path(knowledge_path: Path) -> None:
 
     missing_models = [
         model
-        for model in (OLLAMA_LLM_MODEL, OLLAMA_EMBED_MODEL)
+        for model in (OLLAMA_LLM_MODEL,)
         if model not in available_models
     ]
     if missing_models:
@@ -443,21 +429,32 @@ def run(argv: list[str] | None = None) -> int:
             return 1
         print_status("preflight", "Environment looks ready")
 
-    crew, web_status = build_crew(
-        product=args.product,
-        market=args.market,
-        knowledge_path=knowledge_path,
-        web_search_mode=args.web_search,
-    )
+    try:
+        crew, web_status = build_crew(
+            product=args.product,
+            market=args.market,
+            knowledge_path=knowledge_path,
+            web_search_mode=args.web_search,
+        )
+    except Exception as exc:
+        print_status("error", f"An error occurred while preparing the crew: {exc}")
+        return 1
+
     print_status("tools", f"Knowledge base: {knowledge_path.name}")
     print_status("tools", f"Web search: {web_status}")
     print_status("output", f"Memo will be saved to: {OUTPUT_MEMO_PATH.name}")
     print_status("output", f"Crew logs will be saved to: {CREW_LOG_PATH.name}")
 
     print_section("Running Crew")
+    print_status("run", "Starting 1/3 Competitor Scan")
     print_status("run", "Progress updates will appear as each task actually completes")
+    print_status("run", "The first completion can take a few minutes on local Ollama")
 
-    result = crew.kickoff()
+    try:
+        result = crew.kickoff()
+    except Exception as exc:
+        print_status("error", f"An error occurred while running the crew: {exc}")
+        return 1
 
     print_section("Final Executive Memo")
     print(result.raw)
@@ -482,3 +479,4 @@ def run_with_trigger() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(run(sys.argv[1:]))
+
