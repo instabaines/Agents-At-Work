@@ -1,0 +1,32 @@
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Virtual environments and uv
+**/.venv/
+**/.uv-cache/
+.python-version
+
+# Environment files
+**/.env
+**/.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# CrewAI / local runtime state
+**/.crewai_local/
+
+# Generated demo outputs
+**/crew_run.log
+**/crew_run.log.txt
+**/customer_support_triage.log
+**/customer_support_triage.log.txt
+**/strategic_research_swarm_memo.md
+**/customer_support_triage_report.md
