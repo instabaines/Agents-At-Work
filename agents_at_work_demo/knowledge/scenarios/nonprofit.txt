@@ -1,0 +1,65 @@
+DEMO SCENARIO: NONPROFIT OPERATIONS
+This scenario is optimized for nonprofit and mission-driven audiences that care
+about staff efficiency, donor stewardship, and program delivery capacity.
+
+OUR PRODUCT
+OrbitFlow is framed here as an AI agent platform that helps nonprofit teams
+automate internal operations while protecting limited staff time.
+
+Core buyer:
+- COO
+- Chief of Staff
+- Operations director
+- Development operations lead
+- Program operations manager
+
+Why this scenario matters:
+- Teams are lean and often run many critical workflows manually
+- Administrative overhead pulls time away from mission delivery
+- Budget sensitivity increases pressure for clear ROI and simple deployment
+
+KEY WORKFLOWS
+- Donor and grant follow-up coordination
+- Volunteer onboarding and communications routing
+- Program intake review and case assignment
+- Internal HR, procurement, and approval workflows
+- Board reporting preparation and operational summary generation
+
+BUYING CRITERIA
+- Clear time savings for small teams
+- Ease of rollout without full-time technical staff
+- Pricing predictability
+- Enough governance for confidence, without enterprise complexity
+
+COMPETITOR LANDSCAPE
+PIPELANE AI
+- Type: narrow revenue-team workflow copilot
+- Pricing: per-seat
+- Strength: clear value in fundraising-adjacent outreach workflows
+- Weakness: weak fit for broader nonprofit operations
+
+FLOWMESH
+- Type: automation suite with AI layers
+- Pricing: tiered plus usage
+- Strength: lots of integrations and automation familiarity
+- Weakness: AI still feels secondary for complex operational judgment
+
+STACKPILOT
+- Type: flexible developer-first orchestration
+- Pricing: platform fee plus usage
+- Strength: high flexibility
+- Weakness: unrealistic for many lean nonprofit teams to own internally
+
+ENTERPRISEPATH
+- Type: enterprise transformation platform
+- Pricing: large annual commitment
+- Strength: mature governance story
+- Weakness: too expensive and too heavy for most nonprofit realities
+
+WHERE ORBITFLOW WINS
+- Stronger cross-functional value than departmental tools
+- Faster time to value than heavy enterprise platforms
+- Easier ownership model than developer-first systems
+
+POSITIONING MESSAGE
+"Operational leverage for mission-driven teams without adding overhead."

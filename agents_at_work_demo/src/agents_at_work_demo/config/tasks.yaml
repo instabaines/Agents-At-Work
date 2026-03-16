@@ -1,0 +1,27 @@
+research_task:
+  description: >
+    Use the knowledge base to identify 3-5 strong competitors to {product} in
+    {market}. Capture product focus, target customers, pricing model,
+    integrations, deployment approach, and notable strengths or differentiators.
+    If web search is available, use it only to fill obvious gaps.
+  expected_output: >
+    A markdown table comparing the most relevant competitors and their pricing
+    or positioning.
+  agent: researcher
+
+strategy_task:
+  description: >
+    Based on the competitor scan, identify one meaningful gap or weakness for
+    each competitor and explain why that opening matters for {product}.
+  expected_output: >
+    A concise bullet list of exploitable gaps tied to business impact.
+  agent: strategist
+
+writing_task:
+  description: >
+    Write a short executive memo for leadership that summarizes the market,
+    competitor pricing, major weaknesses in the field, and 1-2 recommended
+    strategic moves for {product} in {market}.
+  expected_output: >
+    A polished markdown memo suitable for a leadership readout.
+  agent: writer

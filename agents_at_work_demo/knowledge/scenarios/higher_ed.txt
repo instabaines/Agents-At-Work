@@ -1,0 +1,65 @@
+DEMO SCENARIO: HIGHER EDUCATION
+This scenario is optimized for university and college audiences focused on
+student services, administrative efficiency, and limited staffing capacity.
+
+OUR PRODUCT
+OrbitFlow is presented here as an AI agent platform for higher-education
+administration, student operations, and cross-department process automation.
+
+Core buyer:
+- Vice President of Operations
+- CIO
+- Enrollment operations leader
+- Student services leader
+- Shared services or HR operations director
+
+Why this scenario matters:
+- Institutions run many repetitive coordination workflows with small teams
+- Student experience depends on timely routing and follow-up
+- Budgets are tight, so ease of deployment and staffing efficiency matter
+
+KEY WORKFLOWS
+- Admissions application triage and routing
+- Student support case intake and escalation
+- Financial aid document follow-up
+- Faculty and staff onboarding coordination
+- Procurement and approval workflow automation
+
+BUYING CRITERIA
+- Ease of use for administrative teams
+- Integration with email, ticketing, identity, and SIS-adjacent systems
+- Clear ROI without enterprise-consulting overhead
+- Governance that is strong enough without slowing adoption
+
+COMPETITOR LANDSCAPE
+FLOWMESH EDU
+- Type: no-code automation with AI assistants
+- Pricing: platform tiers plus workflow volume
+- Strength: approachable for operations staff
+- Weakness: limited adaptive reasoning for messy, exception-heavy cases
+
+STACKPILOT
+- Type: developer-first agent platform
+- Pricing: monthly platform fee plus usage
+- Strength: flexible for technical innovation teams
+- Weakness: too technical for most administrative departments
+
+SERVICE CAMPUS AI
+- Type: student service copilot
+- Pricing: per-seat or per-case packaging
+- Strength: fast value for one service function
+- Weakness: not broad enough for institution-wide operations
+
+ENTERPRISEPATH
+- Type: enterprise transformation platform
+- Pricing: high annual commitments
+- Strength: governance and executive polish
+- Weakness: hard to justify when budgets and headcount are constrained
+
+WHERE ORBITFLOW WINS
+- Easier to operate than developer-centric tools
+- Broader than function-specific student-service products
+- More adaptive than basic automation builders
+
+POSITIONING MESSAGE
+"AI workflow automation for institutions that need more service capacity without adding staff."

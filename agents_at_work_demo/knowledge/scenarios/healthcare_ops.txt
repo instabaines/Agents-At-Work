@@ -1,0 +1,65 @@
+DEMO SCENARIO: HEALTHCARE OPERATIONS
+This scenario is optimized for audiences interested in patient operations,
+care coordination, back-office workflows, and higher governance expectations.
+
+OUR PRODUCT
+OrbitFlow is positioned here as an AI agent platform for healthcare operations
+teams that need workflow automation with strong human approval points.
+
+Core buyer:
+- COO
+- VP Operations
+- Director of Care Operations
+- Revenue cycle leader
+- IT and compliance stakeholders
+
+Why this scenario matters:
+- Healthcare organizations have expensive coordination overhead
+- Many processes involve routing, summarization, and exception handling
+- Leaders need efficiency gains without sacrificing oversight
+
+KEY WORKFLOWS
+- Referral intake and routing
+- Prior authorization follow-up coordination
+- Patient scheduling exception handling
+- Revenue cycle case triage and document chasing
+- Internal employee onboarding for clinical and administrative staff
+
+BUYING CRITERIA
+- Auditability and approval controls
+- Integration with EHR-adjacent and ticketing workflows
+- Role-based access and traceability
+- Clear boundaries for human review on sensitive actions
+
+COMPETITOR LANDSCAPE
+COMPLIANCECOPILOT
+- Type: governance-first workflow AI
+- Pricing: often $4,000-$8,000/month
+- Strength: auditability and controls
+- Weakness: rigid experience and slower business adoption
+
+ENTERPRISEPATH
+- Type: enterprise-grade AI transformation platform
+- Pricing: large annual commitments with services
+- Strength: executive confidence and white-glove delivery
+- Weakness: long timeline before value is visible
+
+FLOWMESH HEALTH
+- Type: legacy automation with AI add-ons
+- Pricing: platform tiers plus AI usage
+- Strength: familiar no-code workflow builder
+- Weakness: weak handling of ambiguous, exception-heavy operational flows
+
+HELPDESK IQ
+- Type: support-focused operational AI
+- Pricing: per-seat plus automation volume
+- Strength: efficient service operations experiences
+- Weakness: narrow scope outside service desk workflows
+
+WHERE ORBITFLOW WINS
+- Stronger business usability than governance-first tools
+- Faster launch than enterprise transformation programs
+- Better support for cross-functional operations than narrow point solutions
+
+POSITIONING MESSAGE
+"Operational AI for healthcare teams that need speed with control."

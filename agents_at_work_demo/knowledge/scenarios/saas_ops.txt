@@ -1,0 +1,65 @@
+DEMO SCENARIO: SAAS OPERATIONS
+This scenario is optimized for audiences discussing mid-market SaaS growth,
+shared services, and internal business process automation.
+
+OUR PRODUCT
+OrbitFlow is an AI agent platform for mid-market SaaS companies that want to
+automate internal business workflows without building a heavy internal AI stack.
+
+Core buyer:
+- COO
+- VP Operations
+- Head of RevOps
+- Support operations leader
+- IT operations lead
+
+Why this scenario matters:
+- SaaS operators want efficiency gains without a long implementation cycle
+- Cross-functional handoffs create measurable friction
+- Teams often use many systems but have lean internal operations staff
+
+KEY WORKFLOWS
+- Lead qualification and routing across CRM, enrichment, and SDR queues
+- Support triage, summarization, and escalation
+- Customer onboarding workflow coordination
+- Employee onboarding and access provisioning
+- Approval and exception routing between revenue and finance teams
+
+MARKET DYNAMICS
+- Buyers want ROI inside one quarter
+- They prefer packaged outcomes over flexible but abstract platforms
+- AI is attractive, but trust and governance still matter
+
+COMPETITOR LANDSCAPE
+STACKPILOT
+- Type: developer-first agent orchestration
+- Pricing: starts near $2,500/month plus usage
+- Strength: flexibility, APIs, advanced control
+- Weakness: too technical for most business operators
+
+PIPELANE AI
+- Type: GTM workflow copilot
+- Pricing: roughly $89-$149 per user/month
+- Strength: strong sales and RevOps templates
+- Weakness: weak outside revenue workflows
+
+FLOWMESH
+- Type: automation suite with AI add-ons
+- Pricing: tiered, often $1,200-$5,000+/month
+- Strength: broad connectors and familiar automation model
+- Weakness: AI can feel bolted on and pricing gets confusing
+
+ENTERPRISEPATH
+- Type: services-heavy enterprise platform
+- Pricing: annual commitments often start around $120,000
+- Strength: governance and enterprise credibility
+- Weakness: too slow and expensive for many mid-market buyers
+
+WHERE ORBITFLOW WINS
+- Easier than developer-first platforms
+- Broader than department-specific copilots
+- More AI-native than legacy automation products
+- Faster to launch than services-heavy enterprise offerings
+
+POSITIONING MESSAGE
+"AI agents for internal operations without a six-month implementation."
