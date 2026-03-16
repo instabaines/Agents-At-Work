@@ -1,0 +1,60 @@
+classify_ticket_task:
+  description: >
+    Read the incoming support ticket for {customer_name}.
+
+    Customer tier: {customer_tier}
+    Channel: {channel}
+    Message: {message}
+
+    Using the support playbook, classify the issue as Billing, Bug, Account,
+    or Other.
+
+    Return:
+    - Category
+    - 1-2 sentence reasoning
+  expected_output: >
+    A clear issue category with concise reasoning.
+  agent: classifier_agent
+
+assign_priority_task:
+  description: >
+    Based on the ticket classification and support playbook, assign urgency as
+    Low, Medium, or High.
+
+    Return:
+    - Priority
+    - Why this urgency fits
+    - What customer or business risk is driving it
+  expected_output: >
+    A priority label with concise reasoning.
+  agent: priority_agent
+
+route_ticket_task:
+  description: >
+    Based on the category and priority, decide which team should handle the
+    case and what the immediate next action should be.
+
+    Return:
+    - Owning team
+    - Queue or function
+    - Immediate next step
+  expected_output: >
+    A routing decision with the next action.
+  agent: routing_agent
+
+supervisor_review_task:
+  description: >
+    Review the classification, priority, and routing decisions and check
+    whether the case is ambiguous, risky, or should be escalated.
+
+    Produce a final markdown triage card with:
+    1. Customer
+    2. Issue summary
+    3. Category
+    4. Priority
+    5. Owning team
+    6. Escalation needed: Yes/No
+    7. Supervisor notes
+  expected_output: >
+    A polished markdown triage card ready for internal support handoff.
+  agent: supervisor_agent

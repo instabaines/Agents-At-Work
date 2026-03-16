@@ -1,0 +1,78 @@
+DEMO 2: CUSTOMER SUPPORT TRIAGE PLAYBOOK
+
+PURPOSE
+This playbook helps a support triage swarm classify incoming customer messages,
+assign urgency, route them to the correct team, and flag risky or ambiguous cases.
+
+ISSUE CATEGORIES
+Billing
+- Invoices, charges, payment failures, refunds, credits, taxes, plan confusion
+
+Bug
+- Product behavior not working as intended, errors, outages, broken workflows, failed integrations
+
+Account
+- Login problems, SSO issues, password resets, access requests, permissions, account lockouts
+
+Other
+- General questions, feature requests, vague requests, or non-support messages
+
+PRIORITY GUIDANCE
+Low
+- Minor inconvenience
+- Workaround exists
+- Single-user question with low business impact
+
+Medium
+- A team is slowed down but not fully blocked
+- Limited business impact
+- Important but not urgent request
+
+High
+- A critical workflow is blocked
+- Deadline pressure exists
+- Multiple users are impacted
+- Billing access, login access, or outage concerns are present
+
+ROUTING RULES
+Billing -> Billing Operations
+Bug -> Product Support Engineering
+Account -> Identity and Access Support
+Other -> General Support Queue
+
+OVERRIDES
+- If the message mentions SSO, permissions, lockout, or login, route to Identity and Access Support
+- If the message mentions invoices, charges, payment, refund, or billing history, route to Billing Operations
+- If the message mentions outage, bug, broken integration, or failed workflow, route to Product Support Engineering
+- If the issue is unclear, route to General Support Queue and flag for supervisor review
+
+SUPERVISOR REVIEW TRIGGERS
+- The message could fit multiple categories
+- Priority is unclear
+- Executive visibility or deadline pressure is mentioned
+- The suggested routing may be risky or incomplete
+
+STYLE
+- Be concise
+- Make the reason for category and urgency explicit
+- Prefer safe escalation when the case is ambiguous
+- Optimize for fast routing, not long analysis
+
+EXAMPLES
+Example 1
+Message: "We were billed twice this month and cannot download the corrected invoice."
+- Category: Billing
+- Priority: Medium
+- Route: Billing Operations
+
+Example 2
+Message: "Our team cannot log in after enabling Okta enforcement."
+- Category: Account
+- Priority: High
+- Route: Identity and Access Support
+
+Example 3
+Message: "The Slack integration is failing and our support workflow stopped."
+- Category: Bug
+- Priority: High
+- Route: Product Support Engineering
